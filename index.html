@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>통합과학 나라</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>통합과학 환경 데이터 분석 실습 수업 지도안</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+  <header class="bg-white shadow-md sticky top-0 z-50">
+    <nav class="container mx-auto px-4 py-3">
+      <div class="flex items-center justify-between">
+        <h1 class="text-xl md:text-2xl font-bold text-green-700">환경 데이터 분석 수업 지도안</h1>
+        <div class="hidden md:flex items-center space-x-2">
+          <a href="#overview" class="nav-link text-gray-600">수업 개요</a>
+          <a href="#session1" class="nav-link text-gray-600">1차시</a>
+          <a href="#session2" class="nav-link text-gray-600">2차시</a>
+          <a href="#session3" class="nav-link text-gray-600">3차시</a>
+          <a href="#evaluation" class="nav-link text-gray-600">평가 계획</a>
+        </div>
+        <div class="md:hidden">
+          <select id="mobile-nav" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+            <option value="#overview">수업 개요</option>
+            <option value="#session1">1차시</option>
+            <option value="#session2">2차시</option>
+            <option value="#session3">3차시</option>
+            <option value="#evaluation">평가 계획</option>
+          </select>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container mx-auto p-4 md:p-8">
+
+    <section id="overview" class="mb-16 scroll-mt-24">
+      <h2 class="text-3xl font-bold mb-6 text-center text-gray-700">수업 개요</h2>
+      <p class="text-center text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
+        이 수업은 고등학교 1학년 학생들이 환경 데이터의 중요성을 깨닫고, 데이터를 직접 정리, 시각화, 해석하는 과정을 통해 과학적 탐구 역량과 환경 문제에 대한 비판적 사고력을 함양하는 것을 목표로 합니다.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white p-6 rounded-lg shadow-sm section-card">
+          <h3 class="font-bold text-xl mb-2 text-green-700">핵심 정보</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li><strong>과목:</strong> 통합과학 (환경 영역)</li>
+            <li><strong>단원:</strong> 과학 탐구 (환경 데이터 실습)</li>
+            <li><strong>대상:</strong> 고등학교 1학년</li>
+            <li><strong>차시:</strong> 총 3차시 (각 50분)</li>
+          </ul>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-sm section-card lg:col-span-2">
+          <h3 class="font-bold text-xl mb-2 text-green-700">수업 목표</h3>
+          <ol class="list-decimal list-inside space-y-2 text-gray-700">
+            <li>환경 현상에서 데이터를 수집하고 기록하는 방법을 이해한다.</li>
+            <li>환경 데이터를 효과적으로 정리하고 시각화할 수 있다.</li>
+            <li>환경 데이터를 통해 경향성을 파악하고 합리적인 결론을 도출할 수 있다.</li>
+            <li>데이터 분석의 한계와 환경 윤리적 측면을 인식하고 비판적으로 사고한다.</li>
+          </ol>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-sm section-card md:col-span-2 lg:col-span-3">
+          <h3 class="font-bold text-xl mb-2 text-green-700">수업 준비물</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <h4 class="font-semibold text-lg">교사</h4>
+              <ul class="list-disc list-inside text-gray-700">
+                <li>빔 프로젝터, 컴퓨터, 판서 도구</li>
+                <li>활동지, 예시 데이터 세트</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-semibold text-lg">학생</h4>
+              <ul class="list-disc list-inside text-gray-700">
+                <li>필기도구, 스마트폰 또는 태블릿</li>
+                <li>개인 노트북 (선택)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="session1" class="mb-16 scroll-mt-24">
+      <h2 class="text-3xl font-bold mb-2 text-center text-gray-700">1차시: 환경 데이터, 어디에 숨어있을까?</h2>
+      <p class="text-xl text-center text-green-600 mb-8 font-medium">"환경 탐정 되기"</p>
+      <p class="text-center text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
+        1차시는 학생들이 '환경 데이터'라는 개념에 익숙해지는 시간입니다. 일상 속에서 환경 데이터를 발견하는 활동과 토론을 통해 데이터 분석의 필요성을 스스로 깨닫게 합니다. '파인만 기법'을 활용하여 어려운 개념을 쉽게 설명하는 연습도 함께 진행됩니다.
+      </p>
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+        <div class="space-y-4">
+          <details class="group">
+            <summary class="flex items-center justify-between cursor-pointer p-3 bg-gray-100 rounded-lg">
+              <h4 class="font-semibold text-lg">수업 흐름</h4>
+              <span class="transform transition-transform duration-300 group-open:rotate-180">▼</span>
+            </summary>
+            <div class="mt-4 p-4 border-l-4 border-green-500 bg-green-50 rounded-r-lg">
+              <div class="space-y-6">
+                <div>
+                  <h5 class="font-bold text-md">도입 (10분)</h5>
+                  <p>'환경 데이터' 경험에 대해 질문하고, 파인만 기법을 소개하며 학습 동기를 유발합니다.</p>
+                  <div class="mt-2 p-3 bg-yellow-100 border-l-4 border-yellow-400 text-yellow-800 rounded-r-lg">
+                    <strong>💡 파인만 기법 예시:</strong> "환경 데이터는 5살 동생에게 설명하듯 가장 쉽게 설명하는 거예요! '오늘 미세먼지 나쁨!' 처럼요."
+                  </div>
+                </div>
+                <div>
+                  <h5 class="font-bold text-md">전개 (30분)</h5>
+                  <p><strong>활동 1:</strong> '나만의 환경 데이터' 찾기 (짝과 함께 주변의 환경 데이터를 찾아보고 설명하기)</p>
+                  <p><strong>활동 2:</strong> '환경 문제 해결에 데이터가 중요한 이유' 토론 (모둠별로 분석의 필요성 토의 및 발표)</p>
+                </div>
+                <div>
+                  <h5 class="font-bold text-md">정리 (10분)</h5>
+                  <p>핵심 내용을 정리하고, 다음 차시를 예고하며 과제를 제시합니다.</p>
+                  <p class="mt-1 font-semibold"><strong>과제:</strong> 주변 환경 현상에서 흥미로운 데이터 3가지 찾아오기</p>
+                </div>
+              </div>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section id="session2" class="mb-16 scroll-mt-24">
+      <h2 class="text-3xl font-bold mb-2 text-center text-gray-700">2차시: 환경 데이터, 어떻게 정리하고 표현할까?</h2>
+      <p class="text-xl text-center text-green-600 mb-8 font-medium">"데이터를 옷 입히기"</p>
+      <p class="text-center text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
+        2차시에서는 수집한 환경 데이터를 효과적으로 정리하고 표현하는 방법을 배웁니다. 표와 다양한 그래프(막대, 꺾은선)의 특징을 이해하고, 주어진 데이터를 가장 적절한 형태로 시각화하는 실습을 진행합니다. 아래에서 직접 차트를 만들어보며 각 그래프의 특징을 확인해보세요.
+      </p>
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+        <h4 class="font-semibold text-lg mb-4">활동: 환경 데이터 그래프로 시각화하기 (실습)</h4>
+        <p class="mb-4">아래는 '서울의 월별 평균 미세먼지(PM10) 농도' 가상 데이터입니다. 버튼을 클릭하여 데이터를 다양한 그래프로 표현해보세요. 어떤 그래프가 월별 비교에 더 효과적일까요? 또 어떤 그래프가 시간의 흐름에 따른 변화를 보기에 더 좋을까요?</p>
+        <div class="text-center mb-4 space-x-2">
+          <button id="bar-chart-btn" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition">막대그래프 (비교)</button>
+          <button id="line-chart-btn" class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition">꺾은선그래프 (변화)</button>
+        </div>
+        <div class="chart-container">
+          <canvas id="session2-chart"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <section id="session3" class="mb-16 scroll-mt-24">
+      <h2 class="text-3xl font-bold mb-2 text-center text-gray-700">3차시: 환경 데이터, 무엇을 말해줄까?</h2>
+      <p class="text-xl text-center text-green-600 mb-8 font-medium">"환경의 속삭임 듣기"</p>
+      <p class="text-center text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
+        마지막 3차시는 시각화된 데이터 속에서 의미 있는 경향성과 패턴을 찾아내는 해석 능력을 기릅니다. 또한, 데이터 분석의 한계점을 배우며 정보를 비판적으로 수용하는 태도를 함양합니다. 아래 '탐정의 질문'을 통해 데이터가 숨기고 있는 이야기를 찾아보세요.
+      </p>
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+        <h4 class="font-semibold text-lg mb-4">활동: 데이터 속 이야기 찾기 (실습)</h4>
+        <p class="mb-4">아래 그래프는 '1880년부터 2020년까지 전 지구 연평균 기온 편차' 데이터입니다. 그래프를 보고 아래 '탐정의 질문' 버튼을 클릭하여 데이터가 말해주는 숨은 의미를 찾아보세요.</p>
+        <div class="text-center mb-4 space-x-2">
+          <button data-answer="그래프는 전반적으로 꾸준히 상승하는 경향을 보입니다. 특히 1980년대 이후부터 상승세가 매우 가팔라지는 것을 볼 수 있습니다. 이는 지구 온난화가 가속화되고 있음을 시사합니다." class="answer-btn bg-purple-500 text-white px-4 py-2 rounded-lg hover:bg-purple-600 transition">그래프의 전체적인 경향성은?</button>
+          <button data-answer="1940년대부터 1970년대 사이에는 기온 상승이 잠시 주춤하거나 약간 하강하는 구간이 보입니다. 과학자들은 이 시기의 화산 활동으로 인한 햇빛 차단 효과나 산업 활동 변화 등을 원인으로 추정하기도 합니다." class="answer-btn bg-purple-500 text-white px-4 py-2 rounded-lg hover:bg-purple-600 transition">기온 상승이 주춤한 구간은?</button>
+          <button data-answer="이 데이터만으로는 기온 상승의 '원인'을 단정할 수 없습니다. 산업화, 온실가스 배출량 등 다른 데이터와 함께 분석해야 더 정확한 결론을 내릴 수 있습니다. 이것이 데이터 분석의 한계점이자, 여러 데이터를 종합적으로 봐야 하는 이유입니다." class="answer-btn bg-purple-500 text-white px-4 py-2 rounded-lg hover:bg-purple-600 transition">이 데이터의 한계점은?</button>
+        </div>
+        <div class="chart-container">
+          <canvas id="session3-chart"></canvas>
+        </div>
+        <div id="answer-box" class="mt-4 p-4 bg-gray-100 rounded-lg text-center text-gray-700 hidden"></div>
+      </div>
+    </section>
+
+    <section id="evaluation" class="scroll-mt-24">
+      <h2 class="text-3xl font-bold mb-6 text-center text-gray-700">평가 계획</h2>
+      <p class="text-center text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
+        학생들의 학습 과정과 결과는 수행평가와 관찰 평가를 통해 종합적으로 평가합니다. 이를 통해 데이터 분석 능력뿐만 아니라 협업 능력과 환경 문제에 대한 비판적 사고력까지 다면적으로 평가하고자 합니다.
+      </p>
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <h3 class="font-bold text-xl mb-2 text-green-700">수행평가 (80%)</h3>
+            <ul class="list-disc list-inside space-y-2">
+              <li><strong>활동지 작성 (40%):</strong> 각 차시별 활동지 참여도 및 내용 충실성</li>
+              <li><strong>모둠 활동 및 발표 (40%):</strong> 모둠 내 협력 태도, 발표의 논리성 및 명확성</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-bold text-xl mb-2 text-green-700">관찰 평가 (20%)</h3>
+            <ul class="list-disc list-inside space-y-2">
+              <li><strong>환경 데이터 분석 보고서:</strong> 최종 보고서의 완성도 및 논리성</li>
+              <li><strong>수업 참여 태도:</strong> 질문의 적극성 및 파인만 기법 이해도</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-white mt-16 py-4 border-t">
+    <div class="container mx-auto text-center text-gray-500">
+      <p>&copy; 2025 고등학교 통합과학 환경 데이터 분석 실습 지도안</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
